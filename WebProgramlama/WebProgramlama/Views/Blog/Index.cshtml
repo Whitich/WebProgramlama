@@ -1,0 +1,13 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+
+
+
+@await Html.PartialAsync("/Views/Blog/BlogList.cshtml")
+
+@*("BlogList", "Blog")*@

@@ -1,0 +1,46 @@
+﻿@model EntityLayer.Concrete.Author
+
+@{
+    ViewData["Title"] = "AdAuthor";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+<div style="max-width; auto; height: auto; margin-top: 5%; margin-bottom: 5%;" >
+
+    <div style="max-width: 30%; height: auto; margin: auto; padding: 5%; border: 4px ridge #9900A4; ">
+
+        <form class="form-group" method="post" >
+
+            @Html.Label("Kullanıcı Adı")
+            @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
+
+            </br>
+
+            @Html.Label("Ad Soyad")
+            @Html.TextBoxFor(x => x.AuthorTitle, new { @class = "form-control" })
+            </br>
+            @Html.Label("Email")
+            @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+            </br>
+            @Html.Label("Şifre")
+            @Html.TextBoxFor(x => x.Password, new { @class = "form-control" })
+            </br>
+            @Html.Label("Profil Resmi URL")
+            @Html.TextBoxFor(x => x.AuthorImage, new { @class = "form-control" })
+            </br>
+            @Html.Label("GSM")
+            @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control" })
+            </br>
+            @Html.Label("Hakkında")
+            @Html.TextBoxFor(x => x.AuthorAbout, new { @class = "form-control" })
+            </br>
+            @Html.Label("İlgi Alanı")
+            @Html.TextBoxFor(x => x.AboutShort, new { @class = "form-control" })
+
+
+
+            <button class="btn btn-info" style="margin-top:10px;float:right">Kaydol</button>
+        </form>
+    </div>
+
+</div>

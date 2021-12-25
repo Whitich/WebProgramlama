@@ -1,0 +1,41 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@model IEnumerable<EntityLayer.Concrete.Blog>
+<body>
+    @*<link href="~/Micss/sssbootstrap.min.css" rel="stylesheet" />*@
+
+    <div class="site-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2>@localizer["Gönderiler"]</h2>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var x in Model)
+                {
+                  
+                <div class="col-lg-4 mb-4">
+                    @*entry2*@
+                    <div class="resimayari">
+                        <a href="/Blog/BlogDetails/@x.BlogID"><img src="@x.BlogImage" alt="Image" class="img-fluid rounded"></a>
+                        <div class="excerpt">
+                            
+                            <h4><a style="color:black" href="/Blog/BlogDetails/@x.BlogID">@x.BlogTitle</a></h4>
+                            <div class="post-meta align-items-center text-left clearfix dairesel">
+                                <span>&nbsp;&nbsp; @(((DateTime)x.BlogDate).ToString("dd-MMM-yyyy"))</span>
+                             
+                            </div>
+                            @*<p>&nbsp;&nbsp;@x.BlogContent.Substring(0, x.BlogContent.Substring(0, 200).LastIndexOf(" "))...</p>*@
+                            <p><a href="/Blog/BlogDetails/@x.BlogID">Devamını Oku</a></p>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+@*@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))*@

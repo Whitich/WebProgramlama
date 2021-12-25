@@ -1,0 +1,11 @@
+﻿
+@{
+    ViewData["Title"] = "Index2";
+    Layout = "~/Views/Shared/_BlogLayout.cshtml";
+}
+
+@model IEnumerable<EntityLayer.Concrete.Blog>
+@foreach(var item in Model)
+            {
+                <h1>@item.BlogID</h1>
+            }

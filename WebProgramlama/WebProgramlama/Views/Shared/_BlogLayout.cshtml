@@ -1,0 +1,93 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@{
+    Layout = null;
+    //var kategoriler = (MvcProjeHata.Models.CategoriesCs)Session["KategoriAdi"];
+}
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <title>Tekno Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ 
+    <link rel="stylesheet" type="text/css" href="/yanakayma/css/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="/css/">
+    <link rel="stylesheet" href="/yanakayma/css/templatemo-style.css">
+    <link rel="stylesheet" href="~/miniblog/fonts/icomoon/style.css">
+    <link rel="stylesheet" href="~/miniblog/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/miniblog/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/miniblog/css/jquery-ui.css">
+    <link rel="stylesheet" href="~/miniblog/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/miniblog/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/miniblog/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/miniblog/fonts/flaticon/font/flaticon.css">
+
+    <link rel="stylesheet" href="~/miniblog/css/style.css">
+
+    <link href="~/Micss/Autosizepng.css" rel="stylesheet" />
+    <link href="~/Micss/navbarcss.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+
+
+<body>
+
+    <div class="boxed">
+        <div class="wrapper" style="z-index:100;"   >
+            <nav>
+                <input type="checkbox" id="show-search">
+                <input type="checkbox" id="show-menu">
+                <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+                <div class="content">
+                    <div class="logo">
+
+                        <a class="logo" href="/Blog/Index/">Tekno Blog </a>
+
+                    </div>
+                    <ul class="links">
+                      
+
+                        
+                        <li>
+                            <a href="#" class="desktop-link">@localizer["Giriş"]</a>
+                            <input type="checkbox" id="show-features">
+                            <label for="show-features">@localizer["Giriş"]</label>
+                            <ul>
+                                <li><a href="/Login/AdminLogin/">@localizer["Admin Giriş"]</a></li>
+                                <li><a href="/Login/AuthorLogin/">@localizer["Giriş"]</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li><a href="/R/AdAuthor/">@localizer["Kaydol"]</a></li>
+
+                        <li>
+                            <a href="#" class="desktop-link"> English/Türkçe</a>
+                            <input type="checkbox" id="show-features">
+                            <label for="show-features">English/Türkçe</label>
+                            <ul>
+                                <li><a href="?culture=en-US"> EN</a></li>
+                                <li><a href="?culture=tr-TR"> TR</a></li>
+                            </ul>
+                        </li>
+
+
+
+                       
+
+
+
+                    </ul>
+               
+                </div>
+                <label for="" class=""><i class=""></i></label>
+               
+            </nav>
+        </div>
+    </div>
+</body>
+@RenderBody()
+</html>
